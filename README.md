@@ -20,6 +20,11 @@ The system should allow the following actions:
 
 # API Documentation
 
+# Local Testing
+The application needs MySql database. We can use docker to start an instance if MySql database on your local to test the application.
+Docker Command (mysql):
+docker run --name lms-mysql-database -p 3306:3306 -e MYSQL_ROOT_PASSWORD=rootPassword -e MYSQL_DATABASE=lms-database -e MYSQL_USER=lms-user -e MYSQL_PASSWORD=lmsPassword -d mysql:9.3.0
+
 # Future Improvments
 * Implement Reminder System to send reminder to Borrowers if the book is not returned with in the return date.
 * Implement Buisiness logic to impose fine on borrowers if the book is not returned on time or damaged/lost.
