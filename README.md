@@ -18,7 +18,9 @@ The system should allow the following actions:
 
 ![LMS](https://github.com/user-attachments/assets/1831fd4c-1be3-43b0-bbb4-1ee5ca1784cc)
 
+# API Documentation
+
 # Future Improvments
-* Implement Reminder System to send reminder to Borrowers if the book is not returned with in the timeline (i.e. This can be implemented).
+* Implement Reminder System to send reminder to Borrowers if the book is not returned with in the return date.
 * Implement Buisiness logic to impose fine on borrowers if the book is not returned on time or damaged/lost.
-* Implement Book Reserve for future date facility for the user who are not able to borrow a book due to it's non-availability.
+* Implement Book Reserve for future date feature for the users who are not able to borrow a book due to it's non-availability.
