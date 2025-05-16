@@ -3,17 +3,11 @@ spring:
     name: library-management-system
 
   datasource:
-    url: ""
-    username: ""
-    password: ""
-
-  jpa:
-    properties:
-      hibernate:
-        dialect: ""
-        default_schema: ""
-    hibernate:
-      ddl-auto: update
+    url: "jdbc:mysql://localhost:3306/lms-database"
+    username: "lms-user"
+    password: "lmsPassword"
+    hikari:
+      schema: lms-database
 
   flyway:
     enabled: true

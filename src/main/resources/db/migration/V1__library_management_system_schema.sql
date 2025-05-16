@@ -13,7 +13,8 @@ CREATE TABLE Book (
 CREATE TABLE Borrower (
     borrower_id int NOT NULL AUTO_INCREMENT,
     name varchar(255) NOT NULL,
-    email varchar(255) NOT NULL
+    email varchar(255) NOT NULL,
+    PRIMARY KEY (borrower_id)
 );
 
 -- Entity/Table for storing Book issue to borrower records
