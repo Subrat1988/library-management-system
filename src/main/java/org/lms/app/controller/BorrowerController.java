@@ -9,11 +9,12 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
-@RestController
 @Slf4j
+@RestController
+@RequestMapping("/libraryManagementSystem/v1")
 public class BorrowerController {
 
-    @RequestMapping(value = "/users", method = RequestMethod.POST)
+    @RequestMapping(value = "/users", method = RequestMethod.POST, produces = {"application/json"})
     public ResponseEntity<Response<Borrower>> register(@RequestBody Borrower borrower) {
         return null;
     }

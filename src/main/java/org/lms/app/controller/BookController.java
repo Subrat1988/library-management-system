@@ -11,16 +11,17 @@ import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
 
-@RestController
 @Slf4j
+@RestController
+@RequestMapping("/libraryManagementSystem/v1")
 public class BookController {
 
-    @RequestMapping(value = "/books", method = RequestMethod.POST)
+    @RequestMapping(value = "/books", method = RequestMethod.POST, produces = {"application/json"})
     public ResponseEntity<Response<Book>> register(@RequestBody Book book) {
         return null;
     }
 
-    @RequestMapping(value = "/books", method = RequestMethod.GET)
+    @RequestMapping(value = "/books", method = RequestMethod.GET, produces = {"application/json"})
     public ResponseEntity<Response<List<Book>>> getBooks() {
         return null;
     }
