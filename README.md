@@ -15,7 +15,8 @@ The system should allow the following actions:
 * As we do allow 2 books with the same ISBN numbers must have the same title and same author as Multiple copies of books with same ISBN number on the system. Then Multiple Members (Borrowers) can borrow the same book (i.e. Same Book Id) if copies available.
 
 # ER Diagram
-![LMS](https://github.com/user-attachments/assets/7c6b134b-0bab-41a3-a997-5a1b34cc66ee)
+
+![LMS](https://github.com/user-attachments/assets/1831fd4c-1be3-43b0-bbb4-1ee5ca1784cc)
 
 # Future Improvments
 * Implement Reminder System to send reminder to Borrowers if the book is not returned with in the timeline (i.e. This can be implemented).
