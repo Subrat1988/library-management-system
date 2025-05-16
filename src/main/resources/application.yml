@@ -1,0 +1,33 @@
+spring:
+  application:
+    name: library-management-system
+
+  datasource:
+    url: ""
+    username: ""
+    password: ""
+
+  jpa:
+    properties:
+      hibernate:
+        dialect: ""
+        default_schema: ""
+    hibernate:
+      ddl-auto: update
+
+  flyway:
+    enabled: true
+    baselineOnMigrate: true
+    validateOnMigrate: true
+    locations: classpath:db/migration
+
+server:
+  port: 8080
+
+loggin:
+  level:
+    root: error
+    org.springframework: error
+  pattern:
+    console: "%d{yyyy-MM-dd HH:mm:ss} %level [%thread] [%file:%line] %msg%n"
+
