@@ -53,15 +53,17 @@ This API is used for getting/fetching all the books registered on Library Manage
 **Sample Response(Success):**   
 {
     "status": "Success",
-    "message": "Book registered successfully",
-    "data": {
-        "bookId": 0,
-        "isbnCode": "5623-4587-1245-9865",
-        "title": "Headfirst Java",
-        "author": "Eric Freeman",
-        "totalCopies": 1,
-        "availableCopies": 1
-    }
+    "message": "Successfully fetched books record from Library Management System",
+    "data": [
+        {
+            "bookId": 3,
+            "isbnCode": "5623-4587-1245-9865",
+            "title": "Headfirst Java",
+            "author": "Eric Freeman",
+            "totalCopies": 1,
+            "availableCopies": 1
+        }
+    ]
 }
 
 # Local Testing
