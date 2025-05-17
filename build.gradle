@@ -1,5 +1,6 @@
 plugins {
 	id 'java'
+	id 'jacoco'
 	id 'org.springframework.boot' version '3.4.5'
 	id 'io.spring.dependency-management' version '1.1.7'
 }
@@ -45,4 +46,27 @@ dependencies {
 
 tasks.named('test') {
 	useJUnitPlatform()
+}
+
+jacocoTestReport {
+	dependsOn test // tests are required to run before generating the report
+
+	afterEvaluate {
+		classDirectories.setFrom(files(classDirectories.files.collect {
+			fileTree(dir: it, exclude: [
+					"org/lms/app/constants/**",
+					"org/lms/app/entity/**",
+					"org/lms/app/exceptions/**",
+					"org/lms/app/handler/**",
+					"org/lms/app/request/**",
+					"org/lms/app/response/**",
+					"org/lms/app/controller/BorrowerController.class",
+					"org/lms/app/controller/BookIssueController.class"
+			])
+		}))
+	}
+}
+
+test {
+	finalizedBy jacocoTestReport
 }

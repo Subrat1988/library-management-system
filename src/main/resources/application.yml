@@ -22,7 +22,7 @@ spring:
 server:
   port: 8080
 
-loggin:
+logging:
   level:
     root: error
     org.springframework: error
