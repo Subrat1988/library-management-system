@@ -72,6 +72,32 @@ This API is used for getting/fetching all the books registered on Library Manage
 }
 ```
 
+### Register Borrower  
+This API is used for registering a new borrower to the Library Management System.  
+
+**API:** http://localhost:8080/libraryManagementSystem/v1/users  
+**Request Method:** POST  
+**Sample Request Body:**  
+```json
+{
+    "name":"Subrat Kumar Patra",
+    "emailId": "subrat@gmail.com"
+}
+```
+
+**Sample Response(Success):**   
+```json
+{
+    "status": "Success",
+    "message": "Borrower registered successfully",
+    "data": {
+        "borrowerId": 0,
+        "name": "Subrat Kumar Patra",
+        "email": "subrat@gmail.com"
+    }
+}
+```
+
 # Local Testing
 The application needs MySql database. We can use docker to start an instance if MySql database on your local to test the application.  
 ### Docker Command (mysql):  
