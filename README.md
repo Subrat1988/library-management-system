@@ -159,7 +159,10 @@ docker run --name lms-mysql-database -p 3306:3306 -e MYSQL_ROOT_PASSWORD=rootPas
 
 # Containerization  
 Sample Dockerfile has been added to the project. Which will create the docker image for the library-management-system application with openjdk:21 base image.  
-**Command:** docker build . -t lms-app
+**Command:** docker build . -t lms-app  
+
+**docker-compose.yml** file has been created to run the mysql database and library-management-system service on docker.  
+**Command:** docker-compose up
 
 # Profiles
 There are 5 different application.yml file have been created for 5 profiles.  
