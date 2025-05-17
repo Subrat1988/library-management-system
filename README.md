@@ -19,6 +19,31 @@ The system should allow the following actions:
 ![LMS](https://github.com/user-attachments/assets/1831fd4c-1be3-43b0-bbb4-1ee5ca1784cc)
 
 # API Documentation
+### Register Book  
+This API is used for registering a new or existing book's additional copy to the Library Management System.  
+
+**API:** http://localhost:8080/libraryManagementSystem/v1/books  
+**Request Method:** POST  
+**Sample Request Body:**  
+{
+    "isbnCode":"5623-4587-1245-9865",
+    "title":"Headfirst Java",
+    "author":"Eric Freeman"
+}
+
+**Sample Response(Success):**   
+{
+    "status": "Success",
+    "message": "Book registered successfully",
+    "data": {
+        "bookId": 0,
+        "isbnCode": "5623-4587-1245-9865",
+        "title": "Headfirst Java",
+        "author": "Eric Freeman",
+        "totalCopies": 1,
+        "availableCopies": 1
+    }
+}
 
 # Local Testing
 The application needs MySql database. We can use docker to start an instance if MySql database on your local to test the application.  
