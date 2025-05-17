@@ -23,6 +23,7 @@ public class BookService {
             if(book.getAuthor().equals(bookRegistrationRequest.getAuthor())
                     && book.getTitle().equals(bookRegistrationRequest.getTitle())) {
                 book.setTotalCopies(book.getTotalCopies() + 1);
+                book.setAvailableCopies(book.getAvailableCopies() + 1);
             } else {
                 log.warn("A book with ISBN {} already exists with different title or author", bookRegistrationRequest.getIsbnCode());
                 throw new InvalidBookException(String.format("Invalid Book: A book with ISBN %s already exists with different title or author",

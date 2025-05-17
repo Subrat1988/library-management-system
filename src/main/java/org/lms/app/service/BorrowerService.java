@@ -18,7 +18,7 @@ public class BorrowerService {
         Borrower borrower = borrowerRepository.findByemail(borrowerRegistrationRequest.getEmailId());
 
         if(null != borrower) {
-            throw new BorrowerAlreadyExistsException(String.format("Borrower with email %s already exists on Library Management System"));
+            throw new BorrowerAlreadyExistsException(String.format("Borrower with email %s already exists on Library Management System", borrowerRegistrationRequest.getEmailId()));
         } else {
             borrower = Borrower.builder()
                     .name(borrowerRegistrationRequest.getName())

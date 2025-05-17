@@ -1,6 +1,7 @@
 package org.lms.app.handler;
 
 import org.lms.app.constants.ApplicationConstants;
+import org.lms.app.exceptions.BookIssueException;
 import org.lms.app.exceptions.BorrowerAlreadyExistsException;
 import org.lms.app.exceptions.InvalidBookException;
 import org.lms.app.response.Response;
@@ -32,6 +33,13 @@ public class GlobalExceptionHandler {
     @ExceptionHandler(InvalidBookException.class)
     public ResponseEntity<Response> handleInvalidBookException(InvalidBookException invalidBookException) {
         Response response = new Response(ApplicationConstants.STATUS_FAILED, invalidBookException.getMessage(), null);
+
+        return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body(response);
+    }
+
+    @ExceptionHandler(BookIssueException.class)
+    public ResponseEntity<Response> handleBookIssueException(BookIssueException exception) {
+        Response response = new Response(ApplicationConstants.STATUS_FAILED, exception.getMessage(), null);
 
         return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body(response);
     }
