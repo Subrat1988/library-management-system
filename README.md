@@ -15,6 +15,7 @@ The system should allow the following actions:
 
 **Java Version:** JDK 21  
 **IDE:** Idea IntelliJ Community Edition  
+**Frameworks:** SpringBoot (Spring Web, Spring Data JPA), Flyway (For database migration)  
 **Build Tool/Package Manager:** Gradle  
 **SQL(mysql):** SQL database has been used as we've strong relationships between different entities, Data Consitency and Data Integrity is a major factor during the book issue process, registering new books and borrowers.
 
