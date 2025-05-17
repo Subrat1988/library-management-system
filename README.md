@@ -161,6 +161,12 @@ docker run --name lms-mysql-database -p 3306:3306 -e MYSQL_ROOT_PASSWORD=rootPas
 Sample Dockerfile has been added to the project. Which will create the docker image for the library-management-system application with openjdk:21 base image.  
 **Command:** docker build . -t lms-app
 
+# Profiles
+There are 5 different application.yml file have been created for 5 profiles.  
+Default (Local), dev, qa, uat and prod.  
+To start the application in any specific profile, the below command should be used with the specific profile. If the profile is not mentioned the application will start with default profile.  
+**./gradlew bootRun -Dspring.profiles.active=dev**  
+
 # Future Improvments
 * Implement Reminder System to send reminder to Borrowers if the book is not returned with in the return date.
 * Implement Buisiness logic to impose fine on borrowers if the book is not returned on time or damaged/lost.
