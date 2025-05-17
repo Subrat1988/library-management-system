@@ -38,11 +38,11 @@ class BorrowerServiceTest {
                 .email("dummy email").build();
 
         Mockito.when(borrowerRepository.findByemail(Mockito.any())).thenReturn(null);
-        Mockito.when(borrowerRepository.save(Mockito.any())).thenReturn(borrower);
+        Mockito.when(borrowerRepository.saveAndFlush(Mockito.any())).thenReturn(borrower);
 
         borrowerService.registerBorrower(borrowerRegistrationRequest);
 
-        Mockito.verify(borrowerRepository, Mockito.times(1)).save(Mockito.any());
+        Mockito.verify(borrowerRepository, Mockito.times(1)).saveAndFlush(Mockito.any());
     }
 
     @Test

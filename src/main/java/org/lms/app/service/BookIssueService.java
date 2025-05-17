@@ -47,12 +47,12 @@ public class BookIssueService {
         bookIssue.setIssueDate(LocalDate.now());
         bookIssue.setIssueStatus(BookIssueStatusConstants.STATUS_ISSUED);
 
-        bookIssue = bookIssueRepository.save(bookIssue);
+        bookIssue = bookIssueRepository.saveAndFlush(bookIssue);
         log.info("Book with id {} successfully borrowed by Borrower with id {} with Book Issue id {}",
                 book.getBookId(), borrower.getBorrowerId(), bookIssue.getIssueId());
 
         book.setAvailableCopies(book.getAvailableCopies() - 1);
-        book = bookRepository.save(book);
+        book = bookRepository.saveAndFlush(book);
 
         return String.format("Book with id %s successfully borrowed by Borrower with id %s with Book Issue id %s",
                 book.getBookId(), borrower.getBorrowerId(), bookIssue.getIssueId());
@@ -87,13 +87,13 @@ public class BookIssueService {
         bookIssue.setReturnDate(LocalDate.now());
         bookIssue.setIssueStatus(BookIssueStatusConstants.STATUS_RETURNED);
 
-        bookIssue = bookIssueRepository.save(bookIssue);
+        bookIssue = bookIssueRepository.saveAndFlush(bookIssue);
 
         book.setAvailableCopies(book.getAvailableCopies()+1);
         log.info("Book with id {} successfully returned by Borrower with id {} with Book Issue id {}",
                 book.getBookId(), borrower.getBorrowerId(), bookIssue.getIssueId());
 
-        book = bookRepository.save(book);
+        book = bookRepository.saveAndFlush(book);
 
         return String.format("Book with id %s successfully returned by Borrower with id %s with Book Issue id %s",
                 book.getBookId(), borrower.getBorrowerId(), bookIssue.getIssueId());

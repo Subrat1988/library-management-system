@@ -24,7 +24,7 @@ public class BorrowerService {
                     .name(borrowerRegistrationRequest.getName())
                     .email(borrowerRegistrationRequest.getEmailId()).build();
 
-            borrower = borrowerRepository.save(borrower);
+            borrower = borrowerRepository.saveAndFlush(borrower);
         }
         log.info("Borrower with email {} registered successfully", borrower.getEmail());
 

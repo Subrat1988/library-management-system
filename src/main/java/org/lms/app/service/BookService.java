@@ -34,7 +34,7 @@ public class BookService {
                     .author(bookRegistrationRequest.getAuthor()).totalCopies(1).availableCopies(1).build();
         }
 
-        book = bookRepository.save(book);
+        book = bookRepository.saveAndFlush(book);
         log.info("Book with ISBN {} has been successfully registered", book.getIsbnCode());
 
         return book;

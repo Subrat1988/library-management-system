@@ -67,13 +67,13 @@ class BookIssueServiceTest {
 
         Mockito.when(bookRepository.findById(1)).thenReturn(Optional.of(book));
         Mockito.when(borrowerRepository.findById(1)).thenReturn(Optional.of(borrower));
-        Mockito.when(bookIssueRepository.save(Mockito.any())).thenReturn(bookIssue);
-        Mockito.when(bookRepository.save(Mockito.any())).thenReturn(book);
+        Mockito.when(bookIssueRepository.saveAndFlush(Mockito.any())).thenReturn(bookIssue);
+        Mockito.when(bookRepository.saveAndFlush(Mockito.any())).thenReturn(book);
 
         bookIssueService.issueBook(bookIssueOrReturnRequest);
 
-        Mockito.verify(bookRepository, Mockito.times(1)).save(Mockito.any());
-        Mockito.verify(bookIssueRepository, Mockito.times(1)).save(Mockito.any());
+        Mockito.verify(bookRepository, Mockito.times(1)).saveAndFlush(Mockito.any());
+        Mockito.verify(bookIssueRepository, Mockito.times(1)).saveAndFlush(Mockito.any());
     }
 
     @Test
@@ -173,13 +173,13 @@ class BookIssueServiceTest {
         Mockito.when(bookRepository.findById(1)).thenReturn(Optional.of(book));
         Mockito.when(borrowerRepository.findById(1)).thenReturn(Optional.of(borrower));
         Mockito.when(bookIssueRepository.findByBorrowerAndBook(borrower, book)).thenReturn(bookIssue);
-        Mockito.when(bookIssueRepository.save(Mockito.any())).thenReturn(bookIssue);
-        Mockito.when(bookRepository.save(Mockito.any())).thenReturn(book);
+        Mockito.when(bookIssueRepository.saveAndFlush(Mockito.any())).thenReturn(bookIssue);
+        Mockito.when(bookRepository.saveAndFlush(Mockito.any())).thenReturn(book);
 
         bookIssueService.returnBook(bookIssueOrReturnRequest);
 
-        Mockito.verify(bookRepository, Mockito.times(1)).save(Mockito.any());
-        Mockito.verify(bookIssueRepository, Mockito.times(1)).save(Mockito.any());
+        Mockito.verify(bookRepository, Mockito.times(1)).saveAndFlush(Mockito.any());
+        Mockito.verify(bookIssueRepository, Mockito.times(1)).saveAndFlush(Mockito.any());
     }
 
     @Test

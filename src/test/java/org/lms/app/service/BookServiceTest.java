@@ -42,11 +42,11 @@ public class BookServiceTest {
                 .availableCopies(1).build();
 
         Mockito.when(bookRepository.findByisbnCode(Mockito.any())).thenReturn(null);
-        Mockito.when(bookRepository.save(Mockito.any())).thenReturn(book);
+        Mockito.when(bookRepository.saveAndFlush(Mockito.any())).thenReturn(book);
 
         Book bookObj = bookService.registerBook(bookRegistrationRequest);
 
-        Mockito.verify(bookRepository, Mockito.times(1)).save(Mockito.any());
+        Mockito.verify(bookRepository, Mockito.times(1)).saveAndFlush(Mockito.any());
 
         Assertions.assertEquals(1, bookObj.getBookId());
         Assertions.assertEquals(1, bookObj.getTotalCopies());
@@ -92,11 +92,11 @@ public class BookServiceTest {
                 .availableCopies(2).build();
 
         Mockito.when(bookRepository.findByisbnCode(Mockito.any())).thenReturn(book);
-        Mockito.when(bookRepository.save(Mockito.any())).thenReturn(book);
+        Mockito.when(bookRepository.saveAndFlush(Mockito.any())).thenReturn(book);
 
         Book bookObj = bookService.registerBook(bookRegistrationRequest);
 
-        Mockito.verify(bookRepository, Mockito.times(1)).save(Mockito.any());
+        Mockito.verify(bookRepository, Mockito.times(1)).saveAndFlush(Mockito.any());
 
         Assertions.assertEquals(1, bookObj.getBookId());
         Assertions.assertEquals(3, bookObj.getTotalCopies());

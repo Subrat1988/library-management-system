@@ -1,0 +1,33 @@
+version: "3.7"
+services:
+  lms-service:
+    build: .
+    restart: always
+    ports:
+      - 8080:8080
+    networks:
+      - lmsapimysql-net
+    environment:
+      - spring.datasource.url=jdbc:mysql://lms-mysql-database:3306/lms-database?allowPublicKeyRetrieval=true
+      - spring.datasource.username=lms-user
+      - spring.datasource.password=lmsPassword
+    depends_on:
+      - lms-mysql-database
+
+    volumes:
+      - .m2:/root/.m2
+
+  lms-mysql-database:
+    image: "mysql:9.3.0"
+    restart: always
+    ports:
+      - 3306:3306
+    networks:
+      - lmsapimysql-net
+    environment:
+      MYSQL_DATABASE: lms-database
+      MYSQL_USER: lms-user
+      MYSQL_PASSWORD: lmsPassword
+      MYSQL_ROOT_PASSWORD: rootPassword
+networks:
+  lmsapimysql-net:
