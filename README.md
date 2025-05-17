@@ -108,9 +108,9 @@ This API is used for registering a new borrower to the Library Management System
 ```
 
 ### Issue Book  
-This API is used for registering a new borrower to the Library Management System.  
+This API is used for borrowing a book by borrower via the Library Management System.  
 
-**API:** http://localhost:8080/libraryManagementSystem/v1/users  
+**API:** http://localhost:8080/libraryManagementSystem/v1/borrow  
 **Request Method:** POST  
 **Sample Request Body:**  
 ```json
@@ -130,10 +130,10 @@ This API is used for registering a new borrower to the Library Management System
 ```
 
 ### Return Book  
-This API is used for registering a new borrower to the Library Management System.  
+This API is used for returning a book to the Library Management System.  
 
-**API:** http://localhost:8080/libraryManagementSystem/v1/users  
-**Request Method:** POST  
+**API:** http://localhost:8080/libraryManagementSystem/v1/return  
+**Request Method:** PATCH  
 **Sample Request Body:**  
 ```json
 {
