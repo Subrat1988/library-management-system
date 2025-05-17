@@ -49,7 +49,7 @@ This API is used for registering a new or existing book's additional copy to the
 }
 ```
 
-### Get All the Books  
+### Get all the Books  
 This API is used for getting/fetching all the books registered on Library Management System.  
 
 **API:** http://localhost:8080/libraryManagementSystem/v1/books  
