@@ -165,7 +165,7 @@ Sample Dockerfile has been added to the project. Which will create the docker im
 There are 5 different application.yml file have been created for 5 profiles.  
 Default (Local), dev, qa, uat and prod.  
 To start the application in any specific profile, the below command should be used with the specific profile. If the profile is not mentioned the application will start with default profile.  
-**./gradlew bootRun -Dspring.profiles.active=dev**  
+**./gradlew bootRun --args='--spring.profiles.active=dev'**  
 
 # Future Improvments
 * Implement Reminder System to send reminder to Borrowers if the book is not returned with in the return date.
