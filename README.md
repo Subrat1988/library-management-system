@@ -98,6 +98,50 @@ This API is used for registering a new borrower to the Library Management System
 }
 ```
 
+### Issue Book  
+This API is used for registering a new borrower to the Library Management System.  
+
+**API:** http://localhost:8080/libraryManagementSystem/v1/users  
+**Request Method:** POST  
+**Sample Request Body:**  
+```json
+{
+    "borrowerId" : 1,
+    "bookId" : "3"
+}
+```
+
+**Sample Response(Success):**   
+```json
+{
+    "status": "Success",
+    "message": "Book issued successfully",
+    "data": "Book with id 3 successfully borrowed by Borrower with id 1 with Book Issue id 0"
+}
+```
+
+### Return Book  
+This API is used for registering a new borrower to the Library Management System.  
+
+**API:** http://localhost:8080/libraryManagementSystem/v1/users  
+**Request Method:** POST  
+**Sample Request Body:**  
+```json
+{
+    "borrowerId" : 1,
+    "bookId" : "3"
+}
+```
+
+**Sample Response(Success):**   
+```json
+{
+    "status": "Success",
+    "message": "Book returned successfully",
+    "data": "Book with id 3 successfully returned by Borrower with id 1 with Book Issue id 1"
+}
+```
+
 # Local Testing
 The application needs MySql database. We can use docker to start an instance if MySql database on your local to test the application.  
 ### Docker Command (mysql):  
