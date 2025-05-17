@@ -21,6 +21,7 @@ The system should allow the following actions:
 
 # Requirement Changes (Assumptions)
 * As we do allow 2 books with the same ISBN numbers must have the same title and same author as Multiple copies of books with same ISBN number on the system. Then Multiple Members (Borrowers) can borrow the same book (i.e. Same Book Id) if copies available.
+* No 2 user/borrowers can have same email id.
 
 # ER Diagram
 
