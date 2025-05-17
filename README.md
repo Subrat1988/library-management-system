@@ -25,13 +25,16 @@ This API is used for registering a new or existing book's additional copy to the
 **API:** http://localhost:8080/libraryManagementSystem/v1/books  
 **Request Method:** POST  
 **Sample Request Body:**  
+```json
 {
     "isbnCode":"5623-4587-1245-9865",
     "title":"Headfirst Java",
     "author":"Eric Freeman"
 }
+```
 
 **Sample Response(Success):**   
+```json
 {
     "status": "Success",
     "message": "Book registered successfully",
@@ -44,6 +47,7 @@ This API is used for registering a new or existing book's additional copy to the
         "availableCopies": 1
     }
 }
+```
 
 ### Get All the Books  
 This API is used for getting/fetching all the books registered on Library Management System.  
@@ -51,6 +55,7 @@ This API is used for getting/fetching all the books registered on Library Manage
 **API:** http://localhost:8080/libraryManagementSystem/v1/books  
 **Request Method:** GET  
 **Sample Response(Success):**   
+```json
 {
     "status": "Success",
     "message": "Successfully fetched books record from Library Management System",
@@ -65,6 +70,7 @@ This API is used for getting/fetching all the books registered on Library Manage
         }
     ]
 }
+```
 
 # Local Testing
 The application needs MySql database. We can use docker to start an instance if MySql database on your local to test the application.  
