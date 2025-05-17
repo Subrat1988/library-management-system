@@ -20,7 +20,7 @@ The system should allow the following actions:
 **SQL(mysql):** SQL database has been used as we've strong relationships between different entities, Data Consitency and Data Integrity is a major factor during the book issue process, registering new books and borrowers.
 
 # Requirement Changes (Assumptions)
-* As we do allow 2 books with the same ISBN numbers must have the same title and same author as Multiple copies of books with same ISBN number on the system. Then Multiple Members (Borrowers) can borrow the same book (i.e. Same Book Id) if copies available.
+* As we do allow 2 books with the same ISBN numbers having the same title and same author. We can add this as multiple copies of books with same ISBN number on the system. Then Multiple Members (Borrowers) can borrow the same book (i.e. Same Book Id) if copies available.
 * No 2 user/borrowers can have same email id.
 
 # ER Diagram
