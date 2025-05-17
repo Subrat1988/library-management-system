@@ -9,6 +9,10 @@ spring:
     hikari:
       schema: lms-database
 
+  jpa:
+    hibernate:
+      naming.physical-strategy: org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl
+
   flyway:
     enabled: true
     baselineOnMigrate: true
