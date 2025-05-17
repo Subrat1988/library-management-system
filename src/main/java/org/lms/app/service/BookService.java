@@ -25,7 +25,8 @@ public class BookService {
                 book.setTotalCopies(book.getTotalCopies() + 1);
             } else {
                 log.warn("A book with ISBN {} already exists with different title or author", bookRegistrationRequest.getIsbnCode());
-                throw new InvalidBookException("Invalid Book");
+                throw new InvalidBookException(String.format("Invalid Book: A book with ISBN %s already exists with different title or author",
+                        bookRegistrationRequest.getIsbnCode()));
             }
         } else {
             book = Book.builder().isbnCode(bookRegistrationRequest.getIsbnCode()).title(bookRegistrationRequest.getTitle())
@@ -39,6 +40,7 @@ public class BookService {
     }
 
     public List<Book> findBooks() {
-        return null;
+        List<Book> books = bookRepository.findAll();
+        return books;
     }
 }

@@ -19,7 +19,7 @@ public class GlobalExceptionHandler {
     public ResponseEntity<Response> handleValidationException(MethodArgumentNotValidException e) {
         Response response = new Response<>(ApplicationConstants.STATUS_FAILED, e.getMessage(), null);
 
-        return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body(response);
+        return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(response);
     }
 
     @ExceptionHandler(BorrowerAlreadyExistsException.class)
