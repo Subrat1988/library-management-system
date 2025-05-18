@@ -13,7 +13,7 @@ The system should allow the following actions:
 
 # Tech Stack & Tools
 
-**Java Version:** JDK 21  
+**Java Version:** JDK 17  
 **IDE:** Idea IntelliJ Community Edition  
 **Frameworks:** SpringBoot (Spring Web, Spring Data JPA), Flyway (For database migration)  
 **Build Tool/Package Manager:** Gradle  
