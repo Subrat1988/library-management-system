@@ -23,7 +23,9 @@ The system should allow the following actions:
 
 # Swagger-UI Integration  
 Swagger-UI has been integrated with the application, Once the application is up and running, we can use the below mentioned url to acces API specification.  
-### http://localhost:8080/swagger-ui/index.html#/
+### http://localhost:8080/swagger-ui/index.html#/  
+![Swagger-UI](https://github.com/user-attachments/assets/a7656baf-5409-4709-a261-068a7d979226)
+
 
 # Requirement Changes (Assumptions)
 * As we do allow 2 books with the same ISBN numbers having the same title and same author. We can add this as multiple copies of books with same ISBN number on the system. Then Multiple Members (Borrowers) can borrow the same book (i.e. Same Book Id) if copies available.
