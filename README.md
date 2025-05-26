@@ -1,3 +1,4 @@
+
 # Library-Management-System
 This is a simple Library Management System which enabled/allows user to register new books, register new borrower, perform actions on behalf of borrower to borrow a book.
 
@@ -18,7 +19,11 @@ The system should allow the following actions:
 **Frameworks:** SpringBoot (Spring Web, Spring Data JPA), Flyway (For database migration)  
 **Build Tool/Package Manager:** Gradle  
 **Code Coverage:** Jacoco  
-**SQL(mysql):** SQL database has been used as we've strong relationships between different entities, Data Consitency and Data Integrity is a major factor during the book issue process, registering new books and borrowers.
+**SQL(mysql):** SQL database has been used as we've strong relationships between different entities, Data Consitency and Data Integrity is a major factor during the book issue process, registering new books and borrowers.  
+
+# Swagger-UI Integration  
+Swagger-UI has been integrated with the application, Once the application is up and running, we can use the below mentioned url to acces API specification.  
+### http://localhost:8080/swagger-ui/index.html#/
 
 # Requirement Changes (Assumptions)
 * As we do allow 2 books with the same ISBN numbers having the same title and same author. We can add this as multiple copies of books with same ISBN number on the system. Then Multiple Members (Borrowers) can borrow the same book (i.e. Same Book Id) if copies available.
@@ -154,12 +159,16 @@ This API is used for returning a book to the Library Management System.
 
 # Local Testing
 The application needs MySql database. We can use docker to start an instance of MySql database on our local to test the application.  
+### Create a network(Docker):  
+docker network create lms-network
+
 ### Docker Command (mysql):  
-docker run --name lms-mysql-database -p 3306:3306 -e MYSQL_ROOT_PASSWORD=rootPassword -e MYSQL_DATABASE=lms-database -e MYSQL_USER=lms-user -e MYSQL_PASSWORD=lmsPassword -d mysql:9.3.0
+docker run --name lms-mysql-database --network lms-network -p 3306:3306 -e MYSQL_ROOT_PASSWORD=rootPassword -e MYSQL_DATABASE=lms-database -e MYSQL_USER=lms-user -e MYSQL_PASSWORD=lmsPassword -d mysql:9.3.0
 
 # Containerization  
 Sample Dockerfile has been added to the project. Which will create the docker image for the library-management-system application with openjdk:21 base image.  
-**Command:** docker build . -t lms-app  
+**Command(Build Docker Image):** docker build . -t lms-app  
+**Command(Run):** docker run --name lms-app --network lms-network -p 8080:8080 -e spring.datasource.url=jdbc:mysql://lms-mysql-database:3306/lms-database?allowPublicKeyRetrieval=true -d lms-app
 ***Note:*** The mysql container and application container should be started on the same network.
 
 **or**
